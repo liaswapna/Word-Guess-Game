@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hangman</title>
+        <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="container-fluid">
+            <div class="row" id="header-row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <img class="img-fluid" id="image-wordguess" src="assets/images/2-WordGuess.jpg" alt="my pic">  
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- result label -->
+        <div class="container">
+            <div class="row" id="label-row">
+                <div class="col-sm-12 col-md-12 text-center" id="label-column">
+                    <!-- print result label here using java script file -->
+                    <div id="label-div">???</div>  
+                </div>
+            </div>
+        </div>
+        <!-- <br> -->
+        <!-- middle content -->
+        <div class="container">
+            <div class="row" id="content-row">
+                <div class="col-sm-6 col-md-6 text-center" id="image-column">
+                    <!-- Add image from java script -->
+                    <img class="img-fluid">
+                </div>
+                <div class="col-sm-6 col-md-6 text-center" id="content-column">
+                    <br>
+                    <p class="para-div-style">PRESS ANY KEY TO GET STARTED</p>
+                    <P class="para-div-style">WINS</P>
+                    <!-- number of wins from javascript file-->
+                    <div class="para-div-style" id="win-div"></div> 
+                    <p class="para-div-style">CURRENT WORD</p>
+                    <!-- number of underscore from javascript file-->
+                    <div class="para-div-style" id="underscore-div">???</div>
+                    <p class="para-div-style">NUMBER OF GUESSES REMAINING</p>
+                    <!-- number of guesses from javascript file -->
+                    <div class="para-div-style" id="guessremain-div">???</div>
+                    <p class="para-div-style">LETTERS ALREADY GUESSED</p>
+                    <!-- already guessed letters from javascipt file -->
+                    <div class="para-div-style" id="guessed-div">???</div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <script src="assets/javascript/game.js"></script>
+    </body>
+</html>

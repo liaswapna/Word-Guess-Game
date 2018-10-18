@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box
+}
+body{
+    margin:0;
+    padding:0;
+    background-color: black;
+    color: white;
+    font-family: 'Courgette', cursive;;
+    font-size: 40px;
+    line-height: 10px;
+}
+/* header row */
+#header-row{
+    margin:0 100px;
+}
+/* header image */
+#image-wordguess{
+    height:200px;
+    width:100%;
+    margin-left:0;
+}
+/* Print result label */
+#label-div{
+    padding:20px;
+    margin-bottom: 20px;
+}
+/* row with 2 columns */
+#content-row{
+    height:100%;
+    margin:0 100px;
+    font-size: 12px;
+    border:3px dotted white;
+}
+/* image row (col1)  */
+#image-column{
+
+}
+/* content row (col2) */
+#content-column{
+    border-left: 4px dashed white;
+}
+/* paragraph and divs font style & spacing */
+.para-div-style{
+    padding: 5px;
+    letter-spacing: 2px;
+    line-height: 15px;
+}
+/* three divs get the text from javascript file */
+#win-div{
+    margin-bottom: 16px;
+}
+#underscore-div{
+    margin-bottom: 16px;
+}
+#guessremain-div{
+    margin-bottom: 16px;
+}
+#guessed-div{
+    margin-bottom: 16px;
+}
