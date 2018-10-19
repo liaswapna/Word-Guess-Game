@@ -1,6 +1,18 @@
 // create an array of words
-var word = ["rose","jasmine","lilly","daisy","sunflower"];
+var word = ["rose","jasmine","lilly","daisy","sunflower","tulip","daffodil","aster","allium"];
+var WordImage = ["assets/images/rose.jpg",
+                "assets/images/jasmine.jpg",
+                "assets/images/lilly.jpg",   
+                "assets/images/daisy.jpg",
+                "assets/images/sunflower.jpg",
+                "assets/images/tulip.jpg",
+                "assets/images/daffodil.jpg",
+                "assets/images/aster.jpg",
+                "assets/images/allium.jpg"
+                ];
 var underscoreArray = [];
+var labelDiv = document.getElementById("label-div");
+var wordimageDiv = document.getElementById("word-image");
 var underscoreDiv = document.getElementById("underscore-div");
 var winDiv = document.getElementById("win-div");
 var guessremainDiv = document.getElementById("guessremain-div");
@@ -33,15 +45,13 @@ function myReset(){
     underscoreDiv.innerHTML = underscoreMyfunction().join(" ");
     guess = 12;
     guessremainDiv.innerHTML = guess;   
-    
 }
 myReset();
 document.onkeypress = function (event) {
     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-    //console.log("guess_before"+guess);
+    if(togetherWord.indexOf(userGuess) === -1){
     guess--;
     guessremainDiv.innerHTML = guess;
-    //console.log("guess_after"+guess);
     if(guess === 0){
         console.log("guess"+guess);
         myReset();
@@ -56,18 +66,24 @@ document.onkeypress = function (event) {
     for(var r=0;r<posArray.length;r++){
         console.log("posArray"+posArray[r]);
     }
-    // var posLetter =  CompGuess.indexOf(userGuess);
-    // console.log(posLetter);
     if(CompGuess.indexOf(userGuess) > -1){
         rightWord.push(userGuess);
         for(var k=0;k<posArray.length;k++){
             underscoreArray[posArray[k]] = userGuess;
-            // console.log("pos: "+posArray[k]);
-            // console.log("pos: "+underscoreArray[posArray[k]]);
         }
         underscoreDiv.innerHTML = underscoreArray.join(" ");
         if(underscoreArray.join("") === CompGuess){
-            //alert("you win");
+            //get the value to Winword
+            Winword = CompGuess;
+            //get the index value from word array to indexWinword
+            indexWinword = word.indexOf(Winword);
+            //use the indexWinword to get image address from image array
+            imageAddress = WordImage[indexWinword];
+            console.log(imageAddress);
+            //set attributes : display the image to img-column
+            wordimageDiv.setAttribute("src",imageAddress);
+            //display label
+            labelDiv.innerHTML = Winword;
             win++;
             winDiv.innerHTML = win;
             myReset();
@@ -78,9 +94,6 @@ document.onkeypress = function (event) {
     togetherWord = wrongWord.concat(rightWord);
     console.log(togetherWord.join(","));
     guessedDiv.innerHTML = togetherWord.join(",");
-    
+}
     
 }
-// check if user guess is right
-// if right push to right array
-// if wrong push to left array
