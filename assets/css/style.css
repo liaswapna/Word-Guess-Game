@@ -4,7 +4,7 @@
 body{
     margin:0;
     padding:0;
-    background-color: black;
+    background-color: lightseagreen;
     color: white;
     font-family: 'Courgette', cursive;;
     font-size: 40px;
@@ -19,6 +19,7 @@ body{
     height:200px;
     width:100%;
     margin-left:0;
+    opacity: 1;
 }
 /* Print result label */
 #label-div{
@@ -59,5 +60,5 @@ body{
 }
 #guessed-div{
     margin-bottom: 16px;
-    overflow: auto;
+    overflow:auto;
 }

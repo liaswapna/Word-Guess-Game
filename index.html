@@ -17,7 +17,26 @@
         <div class="container-fluid">
             <div class="row" id="header-row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
-                    <img class="img-fluid" id="image-wordguess" src="assets/images/header-image.jpg" alt="my pic">  
+                    <img class="img-fluid" id="image-wordguess" src="assets/images/nature.jpg" alt="my pic">  
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- audio -->
+        <div class="container">
+            <div class="row" id="audio-row">
+                <div class="col-sm-12 col-md-12 text-center" id="audio-column">
+                    <!-- play audio here using java script file -->
+                    <audio id="myAudio">
+                        <source src="assets/images/sound.mp3" type="audio/mp3">
+                    </audio>
+                    <div id="musicControls" class="text-center">
+                        <button class="btn btn-success btn-xs theme-button" onclick="playAudio()" id="buttion-theme">
+                          <span class="fa fa-music"></span> Play Theme!</button>
+                        <button class="btn btn-info btn-xs pause-button" onclick="pauseAudio()" id="button-pause">
+                          <span class="fa fa-pause"></span> Pause Song</button>
+                      </div>
+                    <!-- <div id="audio-div"></div>   -->
                 </div>
             </div>
         </div>
