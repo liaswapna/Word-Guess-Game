@@ -26,6 +26,7 @@ var win = 0;
 var guess = 12;
 var posArray = [];
 var n =0
+var checkReset;
 function myReset(){
     underscoreArray = [];
     rightWord = [];
@@ -34,7 +35,6 @@ function myReset(){
     // choose word randomly
     userGuess = "";
     CompGuess = word[Math.floor(Math.random()*word.length)];
-    console.log(CompGuess);
     // create underscore based on length of word
     function underscoreMyfunction() {
         for(var i=0;i<CompGuess.length;i++){
@@ -45,26 +45,23 @@ function myReset(){
     underscoreDiv.innerHTML = underscoreMyfunction().join(" ");
     guess = 12;
     guessremainDiv.innerHTML = guess;   
+    check = 1;
 }
 myReset();
 document.onkeypress = function (event) {
+    check = 0;
     userGuess = String.fromCharCode(event.keyCode).toLowerCase();
     if(togetherWord.indexOf(userGuess) === -1){
     guess--;
     guessremainDiv.innerHTML = guess;
     if(guess === 0){
-        console.log("guess"+guess);
         myReset();
     }
-    console.log(userGuess); 
     posArray = [];
     for(var j=0;j<CompGuess.length;j++){
         if(CompGuess.indexOf(userGuess,j)>-1){
             posArray[n++] = CompGuess.indexOf(userGuess,j);
         }
-    }
-    for(var r=0;r<posArray.length;r++){
-        console.log("posArray"+posArray[r]);
     }
     if(CompGuess.indexOf(userGuess) > -1){
         rightWord.push(userGuess);
@@ -92,8 +89,11 @@ document.onkeypress = function (event) {
         wrongWord.push(userGuess);
     }
     togetherWord = wrongWord.concat(rightWord);
-    console.log(togetherWord.join(","));
     guessedDiv.innerHTML = togetherWord.join(",");
+    if(check === 1){
+        myReset();
+        guessedDiv.innerHTML = "NONE";
+    }
 }
     
 }
