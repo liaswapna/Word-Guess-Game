@@ -45,6 +45,7 @@ function myReset(){
     rightWord = [];
     wrongWord = [];
     togetherWord = [];
+    togetherWordUpper = [];
 
     // Choose word randomly
     userGuess = "";
